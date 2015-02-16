@@ -1,0 +1,37 @@
+{
+  "name": "node-express-sample",
+  "version": "1.0.0",
+  "description": "Sample Express.js application for purpose of building a REST API",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/jeffandersen/node-express-sample.git"
+  },
+  "author": "Jeff Andersen <@jeffandersen>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffandersen/node-express-sample/issues"
+  },
+  "homepage": "https://github.com/jeffandersen/node-express-sample",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "1.10.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
+    "express": "4.11.1",
+    "express-session": "~1.0.0",
+    "express-validator": "^2.8.0",
+    "method-override": "~1.0.0",
+    "mocha": "^2.1.0",
+    "morgan": "~1.0.0",
+    "multer": "^0.1.7",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-instagram": "^0.1.2",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2",
+    "pg": "4.2.0",
+    "supertest": "^0.15.0"
+  }
+}

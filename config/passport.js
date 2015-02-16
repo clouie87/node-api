@@ -100,23 +100,28 @@ module.exports = function(passport) {
 
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            User.localfindOne(email, function(err, isNotAvailable, password, data, user) {
+            //console.log("who is the user ",  User);
+            console.log('the password we are checking is', password);
+            User.localfindOne(email, password, function(err, returningUser, data, user) {
                 // if there are any errors, return the error before anything else
-                if (err)
+                if (err) {
                     return done(err);
 
+                }
                 // if no user is found, return the message
-                if (!isNotAvailable)
+                if (!returningUser) {
                     return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
-
+                }
                 // if the user is found but the password is wrong
-                if (isNotAvailable === true && password !== true)
-                console.log('the user is found but the password does not match!');
+                if (returningUser === true && req.body.password !== password) {
+                    console.log('the user is found but the password does not match!');
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-
+                }
                 // all is well, return successful user
-
-                return done(null, user);
+                else {
+                    console.log('the user', user, 'should go to profile!');
+                    return done(null, user);
+                }
             });
 
         }));
@@ -188,6 +193,7 @@ module.exports = function(passport) {
 
                         // save our user to the database
                         User.fbsave(data, req, function(userData){
+                            console.log('the user is being saved', userData);
 
                             return done(null, userData);
                         });

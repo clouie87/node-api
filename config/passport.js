@@ -231,6 +231,8 @@ module.exports = function(passport) {
             console.log(profile);
 
 
+
+
             var id  = profile.id; // set the users facebook id
             //var token = token; // we will save the token that facebook provides to the user
             var name  = profile.displayName; // look at the passport user profile to see how names are returned
@@ -242,26 +244,12 @@ module.exports = function(passport) {
             process.nextTick(function(callback) {
 
                 // find the user in the database based on their facebook id
-                User.findOne(profile.id, function(err, user) {
-                    console.log(profile.id);
 
-                    var account_type = profile.provider;
-                    var id  = profile.id; // set the users facebook id
-                    var token = token; // we will save the token that facebook provides to the user
-                    var name  = profile.displayName; // look at the passport user profile to see how names are returned
-                    //var email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+                User.snfindOne(id, function(err, returningUser, data, user) {
+                    console.log(data);
 
-
-                    console.log( account_type, token, name, id);
-
-                    var data = [
-                        name,
-                        null,
-                        null,
-                        account_type,
-                        token,
-                        id
-                    ];
+                    user = data;
+                    console.log(user +'is found');
 
                     // if there is an error, stop everything and return that
                     // ie an error connecting to the database
@@ -269,8 +257,13 @@ module.exports = function(passport) {
                         return done(err);
 
                     // if the user is found, then log them in
-                    if (user) {
+                    if (returningUser === true) {
+                        //console.log(data);
+                        console.log(returningUser);
+
+                        console.log('already a fb member '+ data);
                         return done(null, user); // user found, return that user
+
                     } else {
 
                         // save our user to the database

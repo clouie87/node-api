@@ -77,7 +77,6 @@ module.exports = function(passport) {
 
                         //newUser.password = newUser.generateHash(password);
                     }
-                    //return done(null, User);
                 });
 
             });
@@ -96,6 +95,7 @@ module.exports = function(passport) {
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
+
         function(req, email, password, done) { // callback with email and password from our form
 
             // find a user whose email is the same as the forms email
@@ -104,6 +104,9 @@ module.exports = function(passport) {
             console.log('the password we are checking is', password);
             User.localfindOne(email, password, function(err, returningUser, data, user) {
                 // if there are any errors, return the error before anything else
+
+                var user = data;
+                console.log(user);
                 if (err) {
                     return done(err);
 

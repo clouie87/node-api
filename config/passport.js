@@ -156,7 +156,11 @@ module.exports = function(passport) {
             process.nextTick(function(callback) {
 
                 // find the user in the database based on their facebook id
-                User.findOne(email, function(err, isNotAvailable, data, user) {
+                User.snfindOne(id, function(err, returningUser, data, user) {
+                    console.log(data);
+
+                    user = data;
+                    console.log(user +'is found');
 
                     // if there is an error, stop everything and return that
                     // ie an error connecting to the database
@@ -164,11 +168,11 @@ module.exports = function(passport) {
                         return done(err);
 
                     // if the user is found, then log them in
-                    if (isNotAvailable === true) {
+                    if (returningUser === true) {
                         //console.log(data);
-                        console.log(isNotAvailable);
+                        console.log(returningUser);
 
-                        console.log('already a fb member '+ data.values[0]);
+                        console.log('already a fb member '+ data);
                         return done(null, user); // user found, return that user
                     } else {
                         //if there is no user found with that facebook id, create them
@@ -183,7 +187,7 @@ module.exports = function(passport) {
 
                         console.log(token, name, email, id);
 
-                        var data = [
+                        data = [
                             name,
                             email,
                             token,

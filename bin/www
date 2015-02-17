@@ -4,7 +4,7 @@ var app = require('../index');
 var pg = require('../lib/postgres');
 
 // Your database configuration
-var DATABASE_URL = "postgres://carolinelouie@localhost/api"
+var DATABASE_URL = "postgres://carolinelouie:penguin@localhost/api"
 
 // Connect to mysql database
 pg.initialize(DATABASE_URL, function(err) {

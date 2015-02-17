@@ -51,8 +51,12 @@
             <h3><span class="fa fa-user"></span> Display Photos</h3>
             <strong>photos</strong>: <br>
             <div class = "row">
+
+                <% photos.forEach(function(photo) { %>
+                <img style="width: 300px; height: 200px" src = 'http://localhost:3000/<%= photo.filepath %>'/>
+                <% }); %>
                 <div class="col-sm-6">
-                    <img style="width: 300px; height: 200px" src = 'http://localhost:3000/uploads/pan_1424128841708.jpg' />
+
                 </div>
                 <div class="col-sm-6">
                     <img style="width: 300px; height: 200px" src = 'http://localhost:3000/uploads/pan_1424128841708.jpg' />

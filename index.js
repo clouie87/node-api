@@ -41,25 +41,14 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-//app.all('/posts', function(req, res){
-//    res.header("Access-Control-Allow-Origin", "*");
-//    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//
-//    //res.send(
-//    //    {}
-//    //)
-//
-//});
-
-
 // Create the express router object for Photos
 var photoRouter = express.Router();
 console.log ("photoRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
 photoRouter.get('/', function(req, res){
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
     var page = parseInt(req.query.page, 10);
     if (isNaN(page) || page < 1){
         page = 1;

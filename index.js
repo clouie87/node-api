@@ -49,7 +49,8 @@ console.log ("photoRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
 photoRouter.get('/', function(req, res){
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     var page = parseInt(req.query.page, 10);
     if (isNaN(page) || page < 1){
         page = 1;
@@ -105,6 +106,9 @@ photoRouter.post('/', multer({
         fileSize: 2 * 1024 * 1024
     }
 }), photos.validatePhoto, function(req, res) {
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     console.log("Post to /photo is happening");
     var sql = 'INSERT INTO photo (description, filepath, album_id, u_id) VALUES ($1, $2, $3, $4) RETURNING id';

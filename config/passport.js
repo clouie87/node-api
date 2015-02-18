@@ -265,7 +265,23 @@ module.exports = function(passport) {
                         return done(null, user); // user found, return that user
 
                     } else {
+                        var account_type = profile.provider;
+                        var id  = (profile.id); // set the users facebook id
+                        var token = token; // we will save the token that facebook provides to the user
+                        var name  = profile.displayName; // look at the passport user profile to see how names are returned
+                        //var email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
+                        console.log(token, name, id);
+
+                        data = [
+                            name,
+                            null,
+                            token,
+                            account_type,
+                            null,
+                            id
+
+                        ];
                         // save our user to the database
                         User.instasave(data, req, function(userData){
 

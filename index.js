@@ -41,6 +41,15 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+app.all('/posts', function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    //res.send(
+    //    {}
+    //)
+
+});
 
 
 // Create the express router object for Photos
@@ -107,8 +116,7 @@ photoRouter.post('/', multer({
     }
 }), photos.validatePhoto, function(req, res) {
 
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
 
     console.log("Post to /photo is happening");
     var sql = 'INSERT INTO photo (description, filepath, album_id, u_id) VALUES ($1, $2, $3, $4) RETURNING id';

@@ -9,6 +9,7 @@ var DATABASE_URL = "postgres://carol:yaypostgres@localhost/api"
 // Connect to mysql database
 pg.initialize(DATABASE_URL, function(err) {
   if (err) {
+    console.log(err);
     throw err;
   }
 

@@ -221,7 +221,7 @@ module.exports = function(passport) {
             // pull in our app id and secret from our auth.js file
             clientID        : '76f69ff2e0564fce894b6ab73de814a1',
             clientSecret    : '45b2298dd368416b996a1f19625c7eb9',
-            callbackURL     : 'http://localhost:3000/auth/instagram/callback'
+            callbackURL     : 'http://clouie.ca/auth/instagram/callback'
 
         },
 

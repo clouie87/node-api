@@ -49,6 +49,7 @@ console.log ("photoRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
 photoRouter.get('/', function(req, res){
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
     var page = parseInt(req.query.page, 10);
     if (isNaN(page) || page < 1){
         page = 1;

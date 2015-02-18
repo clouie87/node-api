@@ -160,7 +160,7 @@ module.exports = function(passport) {
                     console.log(data);
 
                     user = data;
-                    console.log(user +'is found');
+                    console.log(user.id +'is found');
 
                     // if there is an error, stop everything and return that
                     // ie an error connecting to the database
@@ -172,7 +172,7 @@ module.exports = function(passport) {
                         //console.log(data);
                         console.log(returningUser);
 
-                        console.log('already a fb member '+ data);
+                        console.log('already a fb member '+ data.id);
                         return done(null, user); // user found, return that user
                     } else {
                         //if there is no user found with that facebook id, create them

@@ -228,7 +228,7 @@ module.exports = function(passport) {
         // facebook will send back the token and profile
         function(req, token, refreshToken, profile, done) {
             console.log('instagram login is starting');
-            console.log(profile);
+            //console.log(profile);
 
 
 
@@ -239,7 +239,7 @@ module.exports = function(passport) {
             //var email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
 
-            console.log(name, id);
+            console.log('name: ', name,'id: ', id);
             // asynchronous
             process.nextTick(function(callback) {
 

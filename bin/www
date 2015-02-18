@@ -13,7 +13,7 @@ pg.initialize(DATABASE_URL, function(err) {
   }
 
   // Which port to listen on
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 80);
 
   // Start listening for HTTP requests
   var server = app.listen(app.get('port'), function() {

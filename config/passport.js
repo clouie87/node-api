@@ -261,7 +261,7 @@ module.exports = function(passport) {
                         //console.log(data);
                         console.log(returningUser);
 
-                        console.log('already a fb member '+ data);
+                        console.log('already a insta member '+ data);
                         return done(null, user); // user found, return that user
 
                     } else {

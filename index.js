@@ -41,15 +41,15 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-app.all('/posts', function(req, res){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-
-    //res.send(
-    //    {}
-    //)
-
-});
+//app.all('/posts', function(req, res){
+//    res.header("Access-Control-Allow-Origin", "*");
+//    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//
+//    //res.send(
+//    //    {}
+//    //)
+//
+//});
 
 
 // Create the express router object for Photos
@@ -58,7 +58,7 @@ console.log ("photoRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
 photoRouter.get('/', function(req, res){
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     var page = parseInt(req.query.page, 10);
     if (isNaN(page) || page < 1){

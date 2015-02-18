@@ -136,7 +136,7 @@ module.exports = function(passport) {
             // pull in our app id and secret from our auth.js file
             clientID        : '813365472032554',
             clientSecret    : 'f32ed4d4b39008a290686ae744f88c8f',
-            callbackURL     : 'http://localhost:3000/auth/facebook/callback'
+            callbackURL     : 'http://clouie.ca/auth/facebook/callback'
 
         },
 

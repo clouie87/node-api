@@ -53,7 +53,7 @@
             <div class = "row">
 
                 <% photos.forEach(function(photo) { %>
-                <img style="width: 300px; height: 200px" src = 'http://localhost:3000/<%= photo.filepath %>'/>
+                <img style="width: 300px; height: 200px" src = '<%= photo.filepath %>'/>
                 <% }); %>
                 <div class="col-sm-6">
 

@@ -77,7 +77,7 @@ photoRouter.get('/', function(req, res){
         var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
         // page two the offset is 11.
 
-        sql = 'SELECT * FROM photo OFFSET $1 LIMIT $2';
+        sql = 'SELECT photo.*, users.name as username FROM photo, users WHERE photo.u_id = users.u_id OFFSET $1 LIMIT $2';
         postgres.client.query(sql, [offset, limit], function (err, result) {
             if (err) {
                 console.error(err);

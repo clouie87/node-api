@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node-express-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,8 +110,8 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6909871" vertical-offset="644" max-vertical-offset="3151">
-              <caret line="42" column="0" selection-start-line="40" selection-start-column="7" selection-end-line="42" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.39484978" vertical-offset="690" max-vertical-offset="3036">
+              <caret line="38" column="185" selection-start-line="38" selection-start-column="185" selection-end-line="38" selection-end-column="185" />
               <folding />
             </state>
           </provider>
@@ -805,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6909871" vertical-offset="644" max-vertical-offset="3151">
-          <caret line="42" column="0" selection-start-line="40" selection-start-column="7" selection-end-line="42" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.39484978" vertical-offset="690" max-vertical-offset="3036">
+          <caret line="38" column="185" selection-start-line="38" selection-start-column="185" selection-end-line="38" selection-end-column="185" />
           <folding />
         </state>
       </provider>

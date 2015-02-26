@@ -29,10 +29,10 @@ app.use(bodyParser.urlencoded());
 //make sure to add the validator after the body parser!!
 app.use(expressValidator());
 
-app.all('/upload', function(req,res){
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
-});
+//app.all('/signup', function(req,res){
+//    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+//    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+//});
 
 
 var postgres = require('./lib/postgres');
@@ -108,8 +108,6 @@ photoRouter.post('/', multer({
         fileSize: 2 * 1024 * 1024
     }
 }), photos.validatePhoto, function(req, res) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 
 

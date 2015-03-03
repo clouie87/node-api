@@ -60,7 +60,7 @@ photoRouter.get('/', function(req, res){
 
     var limit = parseInt(req.query.limit, 10);
     if (isNaN(limit)){
-        limit = 10;
+        limit = 20;
     } else if (limit > 50){
         limit = 50;
     } else if (limit < 1) {
@@ -163,6 +163,7 @@ photoRouter.get('/:id([0-9]+)', photos.lookupPhoto, function(req, res) {
 // Similar to the GET on an object, to update it we can PATCH
 photoRouter.patch('/:id', function(req, res) { });
 // Delete a specific object
+
 //photoRouter.delete('/:id', lookupPhoto, function(req, res) { });
 // Attach the routers for their respective paths
 app.use('/photo', photoRouter);

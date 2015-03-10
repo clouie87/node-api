@@ -245,7 +245,7 @@ challengeRouter.post('/', multer({
 
 
     console.log("Post to /challenge is happening");
-    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, c_id) VALUES ($1, $2, $3, $4, $5) RETURNING c_id';
+    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, $4, $5) RETURNING c_id';
     var data = [
         req.body.name,
         req.files.photo.path,

@@ -231,7 +231,7 @@ challengeRouter.get('/', function(req, res){
 
 // A POST to the root of a resource should create a new object
 challengeRouter.post('/', multer({
-    dest: './inputs/',
+    dest: './uploads/',
     rename: function(field, filename){
         filename = filename.replace(/\W+/g, '-').toLowerCase();
         return filename + '_' + Date.now();
@@ -245,7 +245,7 @@ challengeRouter.post('/', multer({
 
 
     console.log("Post to /challenge is happening");
-    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, $4) RETURNING id';
+    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, $4, $5) RETURNING id';
     var data = [
         req.body.name,
         req.files.photo.path,

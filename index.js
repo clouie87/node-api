@@ -241,7 +241,7 @@ challengeRouter.post('/', multer({
         files: 1,
         fileSize: 2 * 1024 * 1024
     }
-}), challenges.validatePhoto, function(req, res) {
+}), photos.validatePhoto, function(req, res) {
 
 
 

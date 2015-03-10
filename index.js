@@ -301,7 +301,7 @@ challengeRouter.patch('/:id', function(req, res) { });
 
 //photoRouter.delete('/:id', lookupPhoto, function(req, res) { });
 // Attach the routers for their respective paths
-app.use('/upload', challengeRouter);
+app.use('/challenge', challengeRouter);
 
 
 var inputRouter = express.Router();

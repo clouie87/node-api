@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/challenge.js" afterPath="$PROJECT_DIR$/lib/models/challenge.js" />
     </list>
     <ignored path="node-express-sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,8 +89,8 @@
       <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/models/challenge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49568966" vertical-offset="0" max-vertical-offset="1794">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.058189657" vertical-offset="1330" max-vertical-offset="1794">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/views/profile.ejs" />
         <option value="$PROJECT_DIR$/lib/routes.js" />
         <option value="$PROJECT_DIR$/views/input.ejs" />
-        <option value="$PROJECT_DIR$/lib/models/challenge.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/lib/models/challenge.js" />
       </list>
     </option>
   </component>
@@ -807,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49568966" vertical-offset="0" max-vertical-offset="1794">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.058189657" vertical-offset="1330" max-vertical-offset="1794">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -246,7 +246,7 @@ challengeRouter.post('/', multer({
 
 
     console.log("Post to /challenge is happening");
-    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, $4, $5) RETURNING id';
+    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, $4, $5) RETURNING c_id';
     var data = [
         req.body.name,
         req.files.photo.path,
@@ -272,7 +272,7 @@ challengeRouter.post('/', multer({
 
         // what does the client want if they have succeeded
         var challengeId = result.rows[0].id;
-        var sql = 'SELECT * FROM challenge WHERE c_id = $1';
+        var sql = 'SELECT * FROM challenge WHERE id = $1';
         postgres.client.query(sql, [ challengeId ], function(err, result){
             if (err){
                 console.error(err);

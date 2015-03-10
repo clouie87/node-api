@@ -241,7 +241,7 @@ challengeRouter.post('/', multer({
         files: 1,
         fileSize: 2 * 1024 * 1024
     }
-}), photos.validatePhoto, function(req, res) {
+}), challenges.validatePhoto, function(req, res) {
 
 
 
@@ -272,7 +272,7 @@ challengeRouter.post('/', multer({
 
         // what does the client want if they have succeeded
         var challengeId = result.rows[0].id;
-        var sql = 'SELECT * FROM challenge WHERE id = $1';
+        var sql = 'SELECT * FROM challenge WHERE c_id = $1';
         postgres.client.query(sql, [ challengeId ], function(err, result){
             if (err){
                 console.error(err);

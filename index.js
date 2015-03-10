@@ -250,7 +250,7 @@ challengeRouter.post('/', multer({
         req.body.name,
         req.files.photo.path,
         req.body.description,
-        //Date.now(),
+        null,
         req.user.id
     ];
     //multer appends the field name (photo)

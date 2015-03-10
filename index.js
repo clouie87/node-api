@@ -177,6 +177,17 @@ uploadRouter.get('/', function(req, res) {
 });
 app.use('/upload', uploadRouter);
 
+var challengeRouter = express.Router();
+challengeRouter.get('/', function(req, res) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
+    res.render('input');
+});
+
+app.use('/challenge', challengeRouter);
+
+
 var userRouter = express.Router();
 console.log ("userRouter is set");
 

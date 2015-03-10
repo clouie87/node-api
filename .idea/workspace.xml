@@ -30,8 +30,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.18965517" vertical-offset="6735" max-vertical-offset="8947">
-              <caret line="289" column="37" selection-start-line="289" selection-start-column="37" selection-end-line="289" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.6530172" vertical-offset="6344" max-vertical-offset="8947">
+              <caret line="289" column="42" selection-start-line="289" selection-start-column="36" selection-end-line="289" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -160,8 +160,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2026" />
-    <option name="y" value="461" />
+    <option name="x" value="1780" />
+    <option name="y" value="131" />
     <option name="width" value="1440" />
     <option name="height" value="826" />
   </component>
@@ -357,11 +357,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2026" y="461" width="1440" height="826" extended-state="0" />
-    <editor active="true" />
+    <frame x="1780" y="131" width="1440" height="826" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -805,8 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.18965517" vertical-offset="6735" max-vertical-offset="8947">
-          <caret line="289" column="37" selection-start-line="289" selection-start-column="37" selection-end-line="289" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.6530172" vertical-offset="6344" max-vertical-offset="8947">
+          <caret line="289" column="42" selection-start-line="289" selection-start-column="36" selection-end-line="289" selection-end-column="42" />
           <folding />
         </state>
       </provider>

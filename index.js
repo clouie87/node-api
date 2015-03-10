@@ -37,6 +37,7 @@ app.use(expressValidator());
 
 var postgres = require('./lib/postgres');
 var photos = require('./lib/models/photo');
+var challenges = require('./lib/models/challenge');
 
 
 // required for passport

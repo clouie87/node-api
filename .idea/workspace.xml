@@ -89,8 +89,8 @@
       <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/models/challenge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.058189657" vertical-offset="1330" max-vertical-offset="1794">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.44612068" vertical-offset="322" max-vertical-offset="1794">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -807,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058189657" vertical-offset="1330" max-vertical-offset="1794">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.44612068" vertical-offset="322" max-vertical-offset="1794">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
           <folding />
         </state>
       </provider>

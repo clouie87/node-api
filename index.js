@@ -271,7 +271,7 @@ challengeRouter.post('/', multer({
 
 
         // what does the client want if they have succeeded
-        var challengeId = result.rows[0].id;
+        var challengeId = result.rows[0].c_id;
         var sql = 'SELECT * FROM challenge WHERE c_id = $1';
         console.log(challengeId);
         postgres.client.query(sql, [ challengeId ], function(err, result){

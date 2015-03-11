@@ -241,7 +241,7 @@ challengeRouter.post('/', multer({
         files: 1,
         fileSize: 2 * 1024 * 1024
     }
-}), challenges.validateChallenge, function(req, res) {
+}), photos.validatePhoto, function(req, res) {
 
     res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
     res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it

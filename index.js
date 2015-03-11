@@ -242,6 +242,7 @@ challengeRouter.post('/', multer({
         fileSize: 2 * 1024 * 1024
     }
 }), photos.validatePhoto, function(req, res) {
+
     res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
     res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
 
@@ -298,7 +299,11 @@ challengeRouter.get('/:id([0-9]+)', challenges.lookupChallenge, function(req, re
 
 });
 // Similar to the GET on an object, to update it we can PATCH
-challengeRouter.patch('/:id', function(req, res) { });
+challengeRouter.patch('/:id', function(req, res) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
+});
 // Delete a specific object
 
 //photoRouter.delete('/:id', lookupPhoto, function(req, res) { });

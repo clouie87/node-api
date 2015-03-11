@@ -258,6 +258,10 @@ challengeRouter.post('/', multer({
     ];
     //multer appends the field name (photo)
 
+    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
+
+
     console.log(data);
     postgres.client.query(sql, data, function(err, result){
         if (err) {

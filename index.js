@@ -241,7 +241,7 @@ challengeRouter.post('/', multer({
         files: 1,
         fileSize: 2 * 1024 * 1024
     }
-}), photos.validatePhoto, function(req, res) {
+}), challenges.validatePhoto, function(req, res) {
 
     res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
     res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
@@ -257,9 +257,6 @@ challengeRouter.post('/', multer({
         req.user.id
     ];
     //multer appends the field name (photo)
-
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
 
 
     console.log(data);

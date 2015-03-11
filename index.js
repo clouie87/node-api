@@ -113,12 +113,13 @@ photoRouter.post('/', multer({
 
 
     console.log("Post to /photo is happening");
-    var sql = 'INSERT INTO photo (description, filepath, album_id, u_id) VALUES ($1, $2, $3, $4) RETURNING id';
+    var sql = 'INSERT INTO photo (description, filepath, album_id, u_id, c_id) VALUES ($1, $2, $3, $4, $5) RETURNING id';
     var data = [
         req.body.description,
         req.files.photo.path,
         req.body.album_id,
-        req.user.id
+        req.user.id,
+        req.body.c_id
     ];
     //multer appends the field name (photo)
 

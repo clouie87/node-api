@@ -313,6 +313,8 @@ challengeRouter.patch('/:id', function(req, res) {
 app.use('/challenge', challengeRouter);
 
 
+/////////////////////////////////////input form for challenge table /////////////////////
+
 var inputRouter = express.Router();
 inputRouter.get('/', function(req, res) {
     res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
@@ -322,6 +324,68 @@ inputRouter.get('/', function(req, res) {
 });
 
 app.use('/input', inputRouter);
+
+//////////////////////////////accepted_challenge Table//////////////////
+
+var acceptRouter = express.Router();
+console.log ("acceptRouter is set");
+
+// A GET to the root of a resource returns a list of that resource
+acceptRouter.get('/', function(req, res){
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
+    var sql = 'SELECT accepted_challenge.*, users.name as username FROM accepted_challenge, users WHERE accepted_challenge.u_id = users.u_id OFFSET $1 LIMIT $2';
+    postgres.client.query(sql, [offset, limit], function (err, result) {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        return res.json({
+          errors: ['Could not retrieve photos']
+        });
+      }
+      return res.json(result.rows);
+    });
+  });
+// A POST to the root of a resource should create a new object
+acceptRouter.post('/', function(req, res) {
+
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
+
+
+
+  console.log("Post to /accepted is happening");
+  var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
+  var data = [
+    req.user.id,
+    req.body.c_id
+  ];
+
+
+  console.log(data);
+  postgres.client.query(sql, data, function(err, result) {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      return res.json({
+        errors: ['Failed to create challenge']
+      });
+    }
+
+    //consoles the id number we are at
+    console.log('Insert result:', result.rows);
+  });
+
+    app.use('/accepted', challengeRouter);
+
+
+
+
+
+
+
+///////////////////////////////////user data/////////////////////////////
 
 
 var userRouter = express.Router();

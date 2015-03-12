@@ -363,26 +363,26 @@ acceptRouter.post('/', function(req, res) {
   console.log("the request is in post accepted", req);
 
   console.log("Post to /accepted is happening");
-  //var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
-  //var data = [
-  //  req.user.id,
-  //  req.body.c_id
-  //];
+  var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
+  var data = [
+    req.user.id,
+    req.body.c_id
+  ];
 
 
-  //console.log(data);
-  //postgres.client.query(sql, data, function (err, result) {
-  //  if (err) {
-  //    console.error(err);
-  //    res.statusCode = 500;
-  //    return res.json({
-  //      errors: ['Failed to create challenge']
-  //    });
-  //  }
-  //
-  //  //consoles the id number we are at
-  //  console.log('Insert result:', result.rows);
-  //});
+  console.log(data);
+  postgres.client.query(sql, data, function (err, result) {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      return res.json({
+        errors: ['Failed to create challenge']
+      });
+    }
+
+    //consoles the id number we are at
+    console.log('Insert result:', result.rows);
+  });
 });
 
     app.use('/accepted', acceptRouter);

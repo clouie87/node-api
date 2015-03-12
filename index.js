@@ -377,7 +377,7 @@ acceptRouter.post('/', function(req, res) {
   });
 });
 
-    app.use('/accepted', challengeRouter);
+    app.use('/accepted', acceptRouter);
 
 
 

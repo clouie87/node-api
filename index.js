@@ -360,32 +360,29 @@ acceptRouter.get('/', function(req, res){
   });
 // A POST to the root of a resource should create a new object
 acceptRouter.post('/', function(req, res) {
-
-  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
-
+  console.log("the request is in post accepted", req);
 
   console.log("Post to /accepted is happening");
-  var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
-  var data = [
-    req.user.id,
-    req.body.c_id
-  ];
+  //var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
+  //var data = [
+  //  req.user.id,
+  //  req.body.c_id
+  //];
 
 
-  console.log(data);
-  postgres.client.query(sql, data, function (err, result) {
-    if (err) {
-      console.error(err);
-      res.statusCode = 500;
-      return res.json({
-        errors: ['Failed to create challenge']
-      });
-    }
-
-    //consoles the id number we are at
-    console.log('Insert result:', result.rows);
-  });
+  //console.log(data);
+  //postgres.client.query(sql, data, function (err, result) {
+  //  if (err) {
+  //    console.error(err);
+  //    res.statusCode = 500;
+  //    return res.json({
+  //      errors: ['Failed to create challenge']
+  //    });
+  //  }
+  //
+  //  //consoles the id number we are at
+  //  console.log('Insert result:', result.rows);
+  //});
 });
 
     app.use('/accepted', acceptRouter);

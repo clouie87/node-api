@@ -354,7 +354,6 @@ acceptRouter.post('/', function(req, res) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it
 
 
-
   console.log("Post to /accepted is happening");
   var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';
   var data = [
@@ -364,7 +363,7 @@ acceptRouter.post('/', function(req, res) {
 
 
   console.log(data);
-  postgres.client.query(sql, data, function(err, result) {
+  postgres.client.query(sql, data, function (err, result) {
     if (err) {
       console.error(err);
       res.statusCode = 500;
@@ -376,6 +375,7 @@ acceptRouter.post('/', function(req, res) {
     //consoles the id number we are at
     console.log('Insert result:', result.rows);
   });
+});
 
     app.use('/accepted', challengeRouter);
 

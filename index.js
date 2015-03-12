@@ -360,7 +360,7 @@ acceptRouter.get('/', function(req, res){
   });
 // A POST to the root of a resource should create a new object
 acceptRouter.post('/', function(req, res) {
-  console.log("the request is in post accepted", req);
+  console.log("the request is in post accepted", req.user);
 
   console.log("Post to /accepted is happening");
   var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';

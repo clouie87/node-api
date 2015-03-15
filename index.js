@@ -199,7 +199,7 @@ challengeRouter2.post('/',function(req,res){
   console.log(req.files)
   res.json({'message':'great!'})
 });
-app.use('/challenge2', uploadRouter);
+app.use('/challenge2', challengeRouter2);
 
 
 ////////////////////////////////Creating the Challenge Table////////////////////////////////////////

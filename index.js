@@ -249,6 +249,7 @@ challengeRouter.get('/', function(req, res){
 challengeRouter.post('/', multer({
     dest: './uploads/',
     rename: function(field, filename){
+      console.log(filename)
         filename = filename.replace(/\W+/g, '-').toLowerCase();
         return filename + '_' + Date.now();
     },

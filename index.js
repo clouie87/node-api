@@ -193,6 +193,15 @@ uploadRouter.get('/', function(req, res) {
 });
 app.use('/upload', uploadRouter);
 
+var challengeRouter2 = express.Router();
+challengeRouter2.post('/',function(req,res){
+  console.log('upload')
+  console.log(req.files)
+  res.json({'message':'great!'})
+});
+app.use('/challenge2', uploadRouter);
+
+
 ////////////////////////////////Creating the Challenge Table////////////////////////////////////////
 
 var challengeRouter = express.Router();

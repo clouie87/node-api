@@ -372,12 +372,12 @@ acceptRouter.get('/', function(req, res){
     });
   });
 // A POST to the root of a resource should create a new object
-acceptRouter.post('/', function(req, res) {
+acceptRouter.post('/', function(user, req, res) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
 
   //console.log("the request is in post accepted", req.user);
-  console.log("the request is in post accepted 2", req.user.user_id);
+  console.log("the request is in post accepted 2", req.user.id);
 
   console.log("Post to /accepted is happening");
   var sql = 'INSERT INTO accepted_challenge (u_id, c_id) VALUES ($1, $2) RETURNING id';

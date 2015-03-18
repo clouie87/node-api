@@ -59,8 +59,8 @@
       <file leaf-file-name="passport.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7863248" vertical-offset="2622" max-vertical-offset="7107">
-              <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.6880342" vertical-offset="2530" max-vertical-offset="7130">
+              <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -806,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7863248" vertical-offset="2622" max-vertical-offset="7107">
-          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.6880342" vertical-offset="2530" max-vertical-offset="7130">
+          <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
           <folding />
         </state>
       </provider>

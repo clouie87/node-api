@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node-express-sample.iws" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3760684" vertical-offset="7383" max-vertical-offset="11201">
-              <caret line="293" column="15" selection-start-line="293" selection-start-column="15" selection-end-line="293" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.5405983" vertical-offset="8510" max-vertical-offset="11201">
+              <caret line="381" column="45" selection-start-line="381" selection-start-column="45" selection-end-line="381" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -139,10 +140,10 @@
         <option value="$PROJECT_DIR$/lib/models/challenge.js" />
         <option value="$PROJECT_DIR$/views/form.ejs" />
         <option value="$PROJECT_DIR$/lib/models/photo.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/lib/models/user.js" />
         <option value="$PROJECT_DIR$/config/passport.js" />
         <option value="$PROJECT_DIR$/lib/routes.js" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -363,10 +364,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="221" y="23" width="1440" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32608697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32608697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -806,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3760684" vertical-offset="7383" max-vertical-offset="11201">
-          <caret line="293" column="15" selection-start-line="293" selection-start-column="15" selection-end-line="293" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.5405983" vertical-offset="8510" max-vertical-offset="11201">
+          <caret line="381" column="45" selection-start-line="381" selection-start-column="45" selection-end-line="381" selection-end-column="45" />
           <folding />
         </state>
       </provider>

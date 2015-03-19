@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node-express-sample.iws" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45017794" vertical-offset="7889" max-vertical-offset="11063">
-              <caret line="354" column="154" selection-start-line="354" selection-start-column="154" selection-end-line="354" selection-end-column="154" />
+            <state vertical-scroll-proportion="0.81850535" vertical-offset="7889" max-vertical-offset="11063">
+              <caret line="363" column="5" selection-start-line="363" selection-start-column="5" selection-end-line="363" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -816,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45017794" vertical-offset="7889" max-vertical-offset="11063">
-          <caret line="354" column="154" selection-start-line="354" selection-start-column="154" selection-end-line="354" selection-end-column="154" />
+        <state vertical-scroll-proportion="0.81850535" vertical-offset="7889" max-vertical-offset="11063">
+          <caret line="363" column="5" selection-start-line="363" selection-start-column="5" selection-end-line="363" selection-end-column="5" />
           <folding />
         </state>
       </provider>

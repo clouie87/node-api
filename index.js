@@ -381,7 +381,7 @@ acceptRouter.get('/', function(req, res) {
     // page two the offset is 11.
 
 
-    var sql = 'SELECT accepted_challenge.*, users.name as username FROM accepted_challenge, users WHERE accepted_challenge.u_id = users.u_id OFFSET $1 LIMIT $2';
+    var sql = 'SELECT accepted_challenge.*, challenge.name as challenge FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id OFFSET $1 LIMIT $2';
     postgres.client.query(sql, [offset, limit], function (err, result) {
       if (err) {
         console.error(err);

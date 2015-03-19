@@ -348,36 +348,38 @@ var acceptRouter = express.Router();
 console.log ("acceptRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
-acceptRouter.get('/', function(req, res){
+acceptRouter.get('/', function(req, res) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
   var page = parseInt(req.query.page, 10);
-  if (isNaN(page) || page < 1){
+  if (isNaN(page) || page < 1) {
     page = 1;
   }
 
   var limit = parseInt(req.query.limit, 10);
-  if (isNaN(limit)){
+  if (isNaN(limit)) {
     limit = 20;
-  } else if (limit > 50){
+  } else if (limit > 50) {
     limit = 50;
   } else if (limit < 1) {
     limit = 1;
   }
 
-  var sql = 'SELECT count(1) FROM accepted_challenge';
-  postgres.client.query(sql, function(err, result) {
+  var sql = 'SELECT count(1) FROM challenge';
+  postgres.client.query(sql, function (err, result) {
     if (err) {
       console.error(err);
       res.statusCode = 500;
       return res.json({
-        errors: ['Could not retrieve accepted challenges!']
+        errors: ['Could not retrieve challenges!']
       });
     }
 
     var count = parseInt(result.rows[0].count, 10);
     var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
     // page two the offset is 11.
+
 
     var sql = 'SELECT accepted_challenge.*, users.name as username FROM accepted_challenge, users WHERE accepted_challenge.u_id = users.u_id OFFSET $1 LIMIT $2';
     postgres.client.query(sql, [offset, limit], function (err, result) {
@@ -391,6 +393,7 @@ acceptRouter.get('/', function(req, res){
       return res.json(result.rows);
     });
   });
+});
 // A POST to the root of a resource should create a new object
 acceptRouter.post('/', function(req, res) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca

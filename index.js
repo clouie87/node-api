@@ -352,7 +352,7 @@ acceptRouter.get('/', function(req, res){
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
 
-    var sql = 'SELECT accepted_challenge.*, challenge.name as challengeName FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id OFFSET $1 LIMIT $2';
+    var sql = 'SELECT accepted_challenge.*, challenge.c_id as c_id FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id OFFSET $1 LIMIT $2';
     postgres.client.query(sql, function (err, result) {
       if (err) {
         console.error(err);

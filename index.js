@@ -193,13 +193,6 @@ uploadRouter.get('/', function(req, res) {
 });
 app.use('/upload', uploadRouter);
 
-var challengeRouter2 = express.Router();
-challengeRouter2.post('/',function(req,res){
-  console.log('upload')
-  console.log(req.files)
-  res.json({'message':'great!'})
-});
-app.use('/challenge2', challengeRouter2);
 
 
 ////////////////////////////////Creating the Challenge Table////////////////////////////////////////
@@ -359,7 +352,7 @@ acceptRouter.get('/', function(req, res){
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
 
-    var sql = 'SELECT accepted_challenge.*, users.name as username FROM accepted_challenge, users WHERE accepted_challenge.u_id = users.u_id OFFSET $1 LIMIT $2';
+    var sql = 'SELECT accepted_challenge.*, users.name as username FROM accepted_challenge, users WHERE accepted_challenge.u_id = user.u_id OFFSET $1 LIMIT $2';
     postgres.client.query(sql, function (err, result) {
       if (err) {
         console.error(err);

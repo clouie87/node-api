@@ -366,13 +366,13 @@ acceptRouter.get('/', function(req, res) {
     limit = 1;
   }
 
-  var sql = 'SELECT count(1) FROM challenge';
+  var sql = 'SELECT count(1) FROM accepted_challenge';
   postgres.client.query(sql, function (err, result) {
     if (err) {
       console.error(err);
       res.statusCode = 500;
       return res.json({
-        errors: ['Could not retrieve challenges!']
+        errors: ['Could not retrieve accepted challenges!']
       });
     }
 
@@ -381,8 +381,8 @@ acceptRouter.get('/', function(req, res) {
     // page two the offset is 11.
 
 
-    var sql = 'SELECT accepted_challenge.*, challenge.name as challenge FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id OFFSET $1 LIMIT $2';
-    postgres.client.query(sql, [offset, limit], function (err, result) {
+    var sql = 'SELECT accepted_challenge.*, challenge.name as challenge FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id AND accepted_challenge.u_id = $3 OFFSET $1 LIMIT $2';
+    postgres.client.query(sql, [offset, limit, req.user.id], function (err, result) {
       if (err) {
         console.error(err);
         res.statusCode = 500;

@@ -490,9 +490,8 @@ voteRouter.post('/', function(req, res) {
   //console.log("the request is in post accepted 2", req.user.id);
 
   console.log("Post to /votes is happening");
-  var sql = 'INSERT INTO votes (c_id, u_id, p_id, vote) VALUES ($1, $2, $3, $4) RETURNING v_id';
+  var sql = 'INSERT INTO votes (u_id, p_id, vote) VALUES ($1, $2, $3) RETURNING v_id';
   var data = [
-    req.body.c_id,
     req.user.id,
     req.body.p_id,
     true

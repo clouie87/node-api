@@ -425,7 +425,96 @@ acceptRouter.post('/', function(req, res) {
   });
 });
 
+//delete a challenge from the table... i dont want to delete i want to deactivate.
+
     app.use('/accepted', acceptRouter);
+
+//////////////////////////////votes Table//////////////////
+
+var voteRouter = express.Router();
+console.log ("voteRouter is set");
+
+// A GET to the root of a resource returns a list of that resource
+voteRouter.get('/', function(req, res) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
+  var page = parseInt(req.query.page, 10);
+  if (isNaN(page) || page < 1) {
+    page = 1;
+  }
+
+  var limit = parseInt(req.query.limit, 10);
+  if (isNaN(limit)) {
+    limit = 20;
+  } else if (limit > 50) {
+    limit = 50;
+  } else if (limit < 1) {
+    limit = 1;
+  }
+
+  var sql = 'SELECT count(1) FROM votes';
+  postgres.client.query(sql, function (err, result) {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      return res.json({
+        errors: ['Could not retrieve votes challenges!']
+      });
+    }
+
+    var count = parseInt(result.rows[0].count, 10);
+    var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
+    // page two the offset is 11.
+
+
+    var sql = 'SELECT votes.*, challenge.c_id as c_id FROM votes, c_id WHERE votes.c_id = challenge.c_id AND photo.p_id as p_id FROM votes, votes.u_id = $3 OFFSET $1 LIMIT $2';
+    postgres.client.query(sql, [offset, limit, req.user.id], function (err, result) {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        return res.json({
+          errors: ['Could not retrieve accepted challenges']
+        });
+      }
+      return res.json(result.rows);
+    });
+  });
+});
+// A POST to the root of a resource should create a new object
+acceptRouter.post('/', function(req, res) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+
+  console.log("the request is in post accepted", req.user);
+  //console.log("the request is in post accepted 2", req.user.id);
+
+  console.log("Post to /votes is happening");
+  var sql = 'INSERT INTO votes (c_id, u_id, p_id, votes) VALUES ($1, $2, $3, $4) RETURNING v_id';
+  var data = [
+    req.body.c_id,
+    req.user.id,
+    req.body.p_id,
+    true
+  ];
+
+
+  console.log(data);
+  postgres.client.query(sql, data, function (err, result) {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      return res.json({
+        errors: ['Failed to create vote']
+      });
+    }
+
+    //consoles the id number we are at
+    console.log('Insert result:', result.rows);
+  });
+});
+
+app.use('/votes', voteRouter);
 
 
 

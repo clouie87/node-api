@@ -468,7 +468,7 @@ voteRouter.get('/', function(req, res) {
     // page two the offset is 11.
 
 
-    var sql = 'SELECT votes.*, challenge.c_id as c_id FROM votes, c_id WHERE votes.c_id = challenge.c_id AND photo.p_id as p_id FROM votes, votes.u_id = $3 OFFSET $1 LIMIT $2';
+    var sql = 'SELECT votes.*, photo.c_id as c_id FROM votes, c_id WHERE votes.c_id = photo.c_id AND photo.p_id as p_id FROM votes, votes.u_id = $3 OFFSET $1 LIMIT $2';
     postgres.client.query(sql, [offset, limit, req.user.id], function (err, result) {
       if (err) {
         console.error(err);

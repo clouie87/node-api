@@ -435,10 +435,10 @@ var voteRouter = express.Router();
 console.log ("voteRouter is set");
 
 // A GET to the root of a resource returns a list of that resource
-voteRouter.get('/:p_id', photos.lookupPhoto, function(req, res) {
+voteRouter.get('/::id([0-9]+', photos.lookupPhoto, function(req, res) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
-  res.json(req.challenge);
+  res.json(req.photo);
 
   //  var sql = 'SELECT COUNT(*) from votes WHERE p_id = $1';
   //  postgres.client.query(sql, [req.body.p_id], function (err, result) {

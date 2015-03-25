@@ -469,7 +469,7 @@ voteRouter.get('/', function(req, res) {
     //var sql = 'SELECT accepted_challenge.*, challenge.name as challenge FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id AND accepted_challenge.u_id = $3 OFFSET $1 LIMIT $2';
 
 
-    var sql = 'SELECT COUNT(*) from votes WHERE p_id=12 OFFSET $1 LIMIT $2';
+    var sql = 'SELECT COUNT(*) from votes WHERE p_id=25 OFFSET $1 LIMIT $2';
     postgres.client.query(sql, [offset, limit], function (err, result) {
       if (err) {
         console.error(err);

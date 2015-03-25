@@ -438,20 +438,48 @@ console.log ("voteRouter is set");
 voteRouter.get('/:id([0-9]+', photos.lookupPhoto, function(req, res) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
-  res.json(req.photo);
+  var page = parseInt(req.query.page, 10);
+  if (isNaN(page) || page < 1) {
+    page = 1;
+  }
 
-  //  var sql = 'SELECT COUNT(*) from votes WHERE p_id = $1';
-  //  postgres.client.query(sql, [req.body.p_id], function (err, result) {
-  //    if (err) {
-  //      console.error(err);
-  //      res.statusCode = 500;
-  //      return res.json({
-  //        errors: ['Could not retrieve votes']
-  //      });
-  //    }
-  //    return res.json(result.rows);
-  //  });
-  //});
+  var limit = parseInt(req.query.limit, 10);
+  if (isNaN(limit)) {
+    limit = 20;
+  } else if (limit > 50) {
+    limit = 50;
+  } else if (limit < 1) {
+    limit = 1;
+  }
+
+  var sql = 'SELECT count(1) FROM votes';
+  postgres.client.query(sql, function (err, result) {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      return res.json({
+        errors: ['Could not retrieve votes challenges!']
+      });
+    }
+
+    var count = parseInt(result.rows[0].count, 10);
+    var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
+    // page two the offset is 11.
+    //var sql = 'SELECT accepted_challenge.*, challenge.name as challenge FROM accepted_challenge, challenge WHERE accepted_challenge.c_id = challenge.c_id AND accepted_challenge.u_id = $3 OFFSET $1 LIMIT $2';
+
+
+    var sql = 'SELECT votes.*, photo.c_id as c_id FROM votes, photo WHERE votes.p_id = photo.id AND votes.u_id = $3 OFFSET $1 LIMIT $2';
+    postgres.client.query(sql, [offset, limit, req.user.id], function (err, result) {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        return res.json({
+          errors: ['Could not retrieve votes']
+        });
+      }
+      return res.json(result.rows);
+    });
+  });
 });
 // A POST to the root of a resource should create a new object
 voteRouter.post('/', function(req, res) {
@@ -484,7 +512,11 @@ voteRouter.post('/', function(req, res) {
     console.log('Insert result:', result.rows);
   });
 });
-
+voteRouter.get('/:id([0-9]+', photos.lookupPhoto, function(req, res) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
+  res.json(req.photo);
+});
 app.use('/votes', voteRouter);
 
 

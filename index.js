@@ -513,13 +513,13 @@ voteRouter.post('/', function(req, res) {
     console.log('Insert result:', result.rows);
   });
 });
-voteRouter.get('/:id', votes.lookupPhoto, function(req, res) {
+voteRouter.get('/:id([0-9]+)', votes.lookupPhoto, function(req, res) {
   console.log('getting votes/id');
   res.header("Access-Control-Allow-Origin", "http://localhost:8100");//set cross domain so localhost:8100 can access clouie.ca
   res.header("Access-Control-Allow-Headers", "X-Requested-With");//make it so allow headers with x request. Without it we get similar error: "XMLHttpRequest cannot load http://...
   res.json(req.vote);
 });
-app.use('/votes', voteRouter);
+app.use('/vote', voteRouter);
 
 
 

@@ -97,7 +97,7 @@ photoRouter.get('/', function(req, res){
         var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
         // page two the offset is 11.
 
-        sql = 'SELECT photo.*, COUNT(votes.*) AS votecount, users.name as username FROM photo, users LEFT JOIN votes ON  photo.id = votes.p_id AND photo.u_id = users.u_id GROUP BY photo.id, users.name OFFSET $1 LIMIT $2';
+        sql = 'SELECT photo.*, COUNT(votes.*) AS votecount FROM photo LEFT JOIN votes ON photo.id = votes.p_id GROUP BY photo.id OFFSET $1 LIMIT $2';
         postgres.client.query(sql, [offset, limit], function (err, result) {
             if (err) {
                 console.error(err);

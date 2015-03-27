@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="" />
+    <list default="true" id="314e4668-4d28-43f6-8ac5-61ea5eacc56a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/photo.js" afterPath="$PROJECT_DIR$/lib/models/photo.js" />
+    </list>
     <ignored path="node-express-sample.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +29,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3381" max-vertical-offset="13938">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2001" max-vertical-offset="13938">
               <caret line="165" column="14" selection-start-line="165" selection-start-column="14" selection-end-line="165" selection-end-column="14" />
               <folding />
             </state>
@@ -57,8 +59,8 @@
       <file leaf-file-name="photo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/models/photo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2705883" vertical-offset="19" max-vertical-offset="2415">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5862745" vertical-offset="736" max-vertical-offset="2415">
+              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -757,22 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="7153">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2829" max-vertical-offset="6279">
-          <caret line="117" column="12" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1794">
@@ -789,6 +775,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="7153">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3657" max-vertical-offset="13938">
@@ -797,10 +791,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2829" max-vertical-offset="6279">
+          <caret line="117" column="12" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/photo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2705883" vertical-offset="19" max-vertical-offset="2415">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5862745" vertical-offset="736" max-vertical-offset="2415">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding />
         </state>
       </provider>

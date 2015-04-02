@@ -253,7 +253,7 @@ challengeRouter.get('/', function(req, res){
 challengeRouter.post('/', multer({
     dest: './uploads/',
     rename: function(field, filename){
-      console.log(filename)
+      console.log(filename);
         filename = filename.replace(/\W+/g, '-').toLowerCase();
         return filename + '_' + Date.now();
     },
@@ -269,7 +269,7 @@ challengeRouter.post('/', multer({
 
 
     console.log("Post to /challenge is happening");
-    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id) VALUES ($1, $2, $3, now(), $4) RETURNING c_id';
+    var sql = 'INSERT INTO challenge (name, filepath, description, created_on, u_id, date_end) VALUES ($1, $2, $3, now(), $4, now()+interval \'7 days\') RETURNING c_id';
     var data = [
         req.body.name,
         req.files.photo.path,

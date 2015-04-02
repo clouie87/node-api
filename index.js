@@ -234,7 +234,7 @@ challengeRouter.get('/', function(req, res){
         var offset = (page - 1) * limit; //page - 1 * the limit so when we are on
         // page two the offset is 11.
 
-        sql = 'SELECT challenge.*, users.name as username FROM challenge, users WHERE challenge.u_id = users.u_id OFFSET $1 LIMIT $2';
+        sql = 'SELECT challenge.*, users.name as username FROM challenge, users WHERE challenge.u_id = users.u_id AND date_end > now() OFFSET $1 LIMIT $2';
         postgres.client.query(sql, [offset, limit], function (err, result) {
             if (err) {
                 console.error(err);

@@ -11,7 +11,7 @@ CREATE TABLE photo (
 );
 
 CREATE TABLE users (
-    u_id serial primary key,  --this is my pk
+    u_id serial primary key,
     name text,
     email text,
     password text

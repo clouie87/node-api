@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json('application/json'));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded( {extended: true }));
 
 //make sure to add the validator after the body parser!!
 app.use(expressValidator());
